@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.rajasaboor.pictureedit.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/gallery_menu_item"
+        android:checkable="false"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_gallery"
+        android:orderInCategory="101"
+        android:title="@string/gallery_menu_item"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
+</menu>
