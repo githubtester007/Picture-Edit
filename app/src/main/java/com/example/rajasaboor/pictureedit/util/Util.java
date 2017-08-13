@@ -11,6 +11,8 @@ import android.widget.ListView;
 
 import com.example.rajasaboor.pictureedit.R;
 import com.example.rajasaboor.pictureedit.consts.Consts;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.util.Arrays;
 
@@ -35,9 +37,9 @@ public class Util {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if (onSelectImageOptionsDialog != null){
+                if (onSelectImageOptionsDialog != null) {
                     onSelectImageOptionsDialog.onOptionSelected(i);
-                }else{
+                } else {
                     Log.e(TAG, "onItemClick: onSelectImageOptionsDialog is NULL");
                 }
             }
@@ -51,7 +53,15 @@ public class Util {
         return new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, Arrays.asList(Consts.SELECT_IMAGES_DIALOG_OPTIONS));
     }
 
+
     public interface IOnSelectImageOptionsDialog {
         void onOptionSelected(int position);
+    }
+
+    public static void initImageLoader(Context context) {
+        // Create global configuration and initialize ImageLoader with this config
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
+                .build();
+        ImageLoader.getInstance().init(config);
     }
 }

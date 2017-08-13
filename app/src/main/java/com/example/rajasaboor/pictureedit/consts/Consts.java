@@ -9,4 +9,5 @@ public class Consts {
 
     public static final String[] SELECT_IMAGES_DIALOG_OPTIONS = {"Load new image from device", "Use plain image"};
     public static final String SELECT_IMAGES_DIALOG_TITLE = "Load Image";
+    public static final int IMAGES_REQUEST_CODE = 1001;
 }
