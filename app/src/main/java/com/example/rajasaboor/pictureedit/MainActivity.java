@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private MainActivityFragment mainActivityFragment = null;
     private Uri selectedImageURI = null;
+    private Menu mainMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        setMainMenu(menu);
         return true;
     }
 
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.gallery_menu_item:
-                mainActivityFragment.openUpGallery();
+                mainActivityFragment.openUpDialogForImageSelect();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                         mainActivityFragment.getLoadImageOptionsDialog().dismiss();
                         setSelectedImageURI(data.getData());
                         mainActivityFragment.setImageToTheImageView(getSelectedImageURI());
+                        mainActivityFragment.createImageEditMenu(getMainMenu(), getMenuInflater());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -90,6 +93,14 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onActivityResult: end");
     }
 
+    public Menu getMainMenu() {
+        return mainMenu;
+    }
+
+    public void setMainMenu(Menu mainMenu) {
+        this.mainMenu = mainMenu;
+    }
+
     public Uri getSelectedImageURI() {
         return selectedImageURI;
     }
@@ -97,4 +108,5 @@ public class MainActivity extends AppCompatActivity {
     public void setSelectedImageURI(Uri selectedImageURI) {
         this.selectedImageURI = selectedImageURI;
     }
+
 }

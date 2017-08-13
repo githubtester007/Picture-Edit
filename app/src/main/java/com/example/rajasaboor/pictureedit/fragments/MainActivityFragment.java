@@ -13,6 +13,8 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -73,7 +75,7 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         Log.d(TAG, "onClick: end");
     }
 
-    private void openUpDialogForImageSelect() {
+    public void openUpDialogForImageSelect() {
         loadImageOptionsDialog = Util.createAlertDialog(getContext(), Consts.SELECT_IMAGES_DIALOG_TITLE, true, this).show();
     }
 
@@ -207,5 +209,12 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
         public void setRotateRequire(boolean rotateRequire) {
             isRotateRequire = rotateRequire;
         }
+    }
+
+    public void createImageEditMenu(Menu menu, MenuInflater inflater) {
+        Log.d(TAG, "onCreateOptionsMenu: start");
+        menu.clear();
+        inflater.inflate(R.menu.image_edit_menu, menu);
+        Log.d(TAG, "onCreateOptionsMenu: end");
     }
 }

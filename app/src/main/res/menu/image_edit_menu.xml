@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/edit_image_menu"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/edit_menu"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/save_image_menu"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="@string/save_menu"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/load_image_menu"
+        android:title="@string/load_image_menu"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/settings_image_menu"
+        android:title="@string/settings_image_menu"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/rotate_image_menu"
+        android:title="@string/rotate_image"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/preview_image_menu"
+        android:title="@string/preview_menu"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/share_image_menu"
+        android:title="@string/share_image"
+        app:showAsAction="never" />
+
+</menu>

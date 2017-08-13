@@ -4,4 +4,11 @@
     <string name="image_content_description">Image</string>
     <string name="gallery_menu_item">Gallery</string>
     <string name="loading_image_message">Loading image</string>
+    <string name="edit_menu">Edit</string>
+    <string name="save_menu">Save</string>
+    <string name="load_image_menu">Load Image</string>
+    <string name="settings_image_menu">Settings</string>
+    <string name="rotate_image">Rotate</string>
+    <string name="preview_menu">Preview</string>
+    <string name="share_image">Share</string>
 </resources>
